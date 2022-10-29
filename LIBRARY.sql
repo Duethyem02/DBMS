@@ -34,4 +34,5 @@ DROP TABLE Publisher;/* without foreign key*/
 ALTER TABLE Publisher ADD Ph_no bigint;
 ALTER TABLE Book_Issue DROP COLUMN Date_Of_Issue;--without data
 
+--e                                                                                    
 CREATE INDEX INDEXB ON Book_Issue(Member_id,Book_id);
