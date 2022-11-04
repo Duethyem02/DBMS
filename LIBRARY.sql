@@ -36,3 +36,14 @@ ALTER TABLE Book_Issue DROP COLUMN Date_Of_Issue;--without data
 
 --e                                                                                    
 CREATE INDEX INDEXB ON Book_Issue(Member_id,Book_id);
+                                                                                     
+--f
+ GRANT INSERT ON BOOK TO s5dii;
+ REVOKE INSERT ON BOOK FROM s5dii;
+--h
+LOAD DATA LOCAL INFILE '/home/s5di/book.csv' INTO TABLE BOOK FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1
+ROWS;
+ 
+ --i
+DELETE FROM BOOK WHERE Book_id=0;
+
