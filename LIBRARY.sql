@@ -47,3 +47,77 @@ ROWS;
  --i
 DELETE FROM BOOK WHERE Book_id=0;
 
+ /*
+ SELECT * FROM Publisher;
++--------------+---------+---------+
+| Publisher_id | Name    | Address |
++--------------+---------+---------+
+|            1 | Amal    | Qwerty  |
+|            2 | Sathyan | Asdff   |
+|            3 | Vinny   | Zxcvt   |
+|            4 | Manu    | Tyuoio  |
+|            5 | Ram     | Sdgfh   
+
+
+SELECT * FROM Author;
++-----------+--------+------------------+------------+--------------+
+| Author_id | Name   | Email            | Ph_no      | Status       |
++-----------+--------+------------------+------------+--------------+
+|         1 | Ashwin | ashwin@gmail.com | 8547354992 | Story Writer |
+|         2 | Fahma  | fahma@gmail.com  | 9495669621 | Novelist     |
+|         3 | Durga  | dga@gmail.com    | 9847082962 | Story Wrier  |
+|         4 | Melvin | melv@gmail.com   | 8547353423 | Novelist     |
+
+
+SELECT * FROM Member;
++-----------+--------+-------------+---------+------------------+--------------+-------------+
+| Member_id | Name   | Branch_code | Roll_no | Email            | Date_of_join | Status      |
++-----------+--------+-------------+---------+------------------+--------------+-------------+
+|        10 | Jino   |         345 |       1 | jino@gmail.com   | 2020-08-10   | Regular     |
+|        15 | Emil   |         426 |       2 | emil@gmail.com   | 2021-04-12   | Regular     |
+|        17 | Sharon |         345 |       3 | sh@gmail.com     | 2020-10-24   | Not Regular |
+|        20 | Shamna |         440 |       4 | ammu@gmail.com   | 2022-11-22   | Not Regular |
+|        25 | Nayana |         426 |       5 | nayana@gmail.com | 2020-06-06   | Not Regular |
++-----------+--------+-------------+---------+------------------+--------------+-------------+
+SELECT * FROM Language;
++---------+-----------+
+| lang_id | Name      |
++---------+-----------+
+|       3 | Malayalam |
+|       5 | English   |
+|       6 | Hindi     |
+
+
+SELECT * FROM Late_Fee_Rule;
++-----------+---------+--------+
+| From_days | To_days | Amount |
++-----------+---------+--------+
+|         0 |       7 |     10 |
+|         7 |      30 |    100 |
+
+ SELECT * FROM BOOK;
++---------+------------+-------------+------+--------------+----------------+--------+--------------+
+| Book_id | Title      | Language_id | MRP  | Publisher_id | Published_date | Volume | Status       |
++---------+------------+-------------+------+--------------+----------------+--------+--------------+
+|       1 | C PROGRAM  |           5 |  300 |            2 | 2000-10-21     |      3 | Returned     |
+|       2 | CHERUKADHA |           3 |  150 |            4 | 2010-07-30     |      1 | Not Returned |
+|       3 | JAVA       |           5 |  200 |            1 | 2010-02-10     |      2 | Not Returned |
+|       4 | DATA BASE  |           6 |  250 |            3 | 2005-10-03     |      1 | Returned     |
+
+*/
+
+
+
+
+
+
+SELECT * FROM Book_Author;
++---------+-----------+
+| Book_id | Author_id |
++---------+-----------+
+|       4 |         1 |
+|       3 |         2 |
+|       1 |         3 |
+|       2 |         4 |
++---------+-----------+
+
