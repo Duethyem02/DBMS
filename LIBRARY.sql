@@ -104,13 +104,7 @@ SELECT * FROM Late_Fee_Rule;
 |       3 | JAVA       |           5 |  200 |            1 | 2010-02-10     |      2 | Not Returned |
 |       4 | DATA BASE  |           6 |  250 |            3 | 2005-10-03     |      1 | Returned     |
 
-*/
-
-
-
-
-
-
+                                                                                                                                    
 SELECT * FROM Book_Author;
 +---------+-----------+
 | Book_id | Author_id |
@@ -121,3 +115,31 @@ SELECT * FROM Book_Author;
 |       2 |         4 |
 +---------+-----------+
 
+                                                                                     
+ SELECT * FROM BOOK;
++---------+----------------------+-------------+------+--------------+----------------+--------+--------------+
+| Book_id | Title                | Language_id | MRP  | Publisher_id | Published_date | Volume | Status       |
++---------+----------------------+-------------+------+--------------+----------------+--------+--------------+
+|       1 | C PROGRAM            |           5 |  300 |            2 | 2000-10-21     |      3 | Returned     |
+|       2 | CHERUKADHA           |           3 |  150 |            4 | 2010-07-30     |      1 | Not Returned |
+|       3 | JAVA                 |           5 |  200 |            1 | 2010-02-10     |      2 | Not Returned |
+|       4 | DATA BASE            |           6 |  250 |            3 | 2005-10-03     |      1 | Returned     |
+|       5 | Fundamentals of Wave |           5 |  228 |            5 | 2000-10-21     |      1 | Wiley        |
+|       7 | God Created the Inte |           3 |  197 |            4 | 2002-08-10     |      3 | Penguin      |
++---------+----------------------+-------------+------+--------------+----------------+--------+--------------+
+6 rows in set (0.25 sec)
+
+mysql> SELECT * FROM Book_Author;
++---------+-----------+
+| Book_id | Author_id |
++---------+-----------+
+|       4 |         1 |
+|       5 |         1 |
+|       3 |         2 |
+|       7 |         2 |
+|       1 |         3 |
+|       2 |         4 |
++---------+-----------+
+6 rows in set (0.03 sec)
+                                                                                                                  
+*/                                                                                     
