@@ -68,3 +68,14 @@ SELECT Name FROM Member,Book_Issue,Book_Return WHERE Member.Member_id=Book_Issue
 | Sharon |
 +--------+
 */
+--H
+
+--I
+SELECT Name FROM Member,Book_Issue WHERE Date_of_join > '2021-01-01' AND Member.Member_id NOT IN(SELECT Member_id  FROM Book_Issue) GROUP BY Name;
+/*
++------+
+| Name |
++------+
+| Emil |
++------+ 
+*/
