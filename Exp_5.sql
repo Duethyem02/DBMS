@@ -59,7 +59,7 @@ SELECT SUM(late_fee) AS Fine FROM Book_Return WHERE MONTH(Actual_date_of_return)
 +------+
 */
 --G
-SELECT Name FROM Member,Book_Issue,Book_Return WHERE Member.Member_id=Book_Issue.Member_id AND Book_Issue.Issue_id = Book_Return.Issue_id AND Book_Return.late_days>0;
+SELECT Name FROM Member,Book_Issue,Book_Return WHERE Member.Member_id=Book_Issue.Member_id AND Book_Issue.Issue_id = Book_Return.Issue_id AND Book_Return.late_days!=0;
 /*
 +--------+
 | Name   |
