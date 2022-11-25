@@ -33,6 +33,13 @@ SELECT BOOK.Title FROM BOOK,Book_Issue,Book_Return WHERE BOOK.Book_id=Book_Issue
 +------------+
 */
 --E
-SELECT Member.Name FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id
-AND BOOK.Language_id=Language.Lang_id AND Language.Name='Malayalam' AND Member.Member_id NOT IN (SELECT Member.Member_id FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id AND BOOK.Language_id=Language.lang_id AND  Language.Name != 'Malayalam');
-Empty set, 3 warnings (0.69 sec)
+SELECT Member.Name FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id AND BOOK.Language_id=Language.Lang_id AND Language.Name='Malayalam' AND  Member.Member_id NOT IN (SELECT Member.Member_id FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id AND BOOK.Language_id=Language.lang_id 
+AND Language.Name != 'Malayalam');
+/*
++--------+
+| Name   |
++--------+
+| Sharon |
++--------+
+*/
+--F
