@@ -23,14 +23,13 @@ SELECT Publisher.Name,COUNT(*)  FROM Publisher,BOOK WHERE Publisher.Publisher_id
 --C
 
 --D
-SELECT BOOK.Title FROM BOOK,Book_Issue,Book_Return WHERE BOOK.Book_id=Book_Issue.Book_id AND Book_Issue.Issue_id!=Book_Return.Issue_id;
+SELECT BOOK.Title FROM BOOK,Book_Issue,Book_Return WHERE BOOK.Book_id=Book_Issue.Book_id AND Book_Issue.Issue_id NOT IN (SELECT Issue_id FROM Book_Return) GROUP BY BOOK.Title;
 /*
-+------------+
-| Title      |
-+------------+
-| CHERUKADHA |
-| JAVA       |
-+------------+
++----------------------+
+| Title                |
++----------------------+
+| God Created the Inte |
++----------------------+
 */
 --E
 SELECT Member.Name FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id AND BOOK.Language_id=Language.Lang_id AND Language.Name='Malayalam' AND  Member.Member_id NOT IN (SELECT Member.Member_id FROM Member,Language,BOOK,Book_Issue WHERE Member.Member_id=Book_Issue.Member_id AND BOOK.Book_id=Book_Issue.Book_id AND BOOK.Language_id=Language.lang_id 
