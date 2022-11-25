@@ -43,3 +43,20 @@ AND Language.Name != 'Malayalam');
 +--------+
 */
 --F
+SELECT SUM(late_fee) AS Fine FROM Book_Return WHERE MONTH(Actual_date_of_return)=MONTH(CURDATE());
+/*
++------+
+| Fine |
++------+
+| NULL |
++------+
+*/
+ SELECT SUM(late_fee) AS Fine FROM Book_Return WHERE QUARTER(Actual_date_of_return)=QUARTER(CURDATE());
+/*
++------+
+| Fine |
++------+
+|  100 |
++------+
+*/
+--G
