@@ -21,14 +21,12 @@ SELECT Publisher.Name,COUNT(*)  FROM Publisher,BOOK WHERE Publisher.Publisher_id
 +---------+----------+
 */
 --C
-select Name from Author where Author_id in (select distinct a.Author_id from Book_Author a, Book_Author b where  a.Book_id=b.Book_id and a.Author_id <> b.Author_id and a.Book_id in (select Book_id from Book_Author where Book_id in (select Book_id from Book_Author group by Book_id having count(*)>1)));
+SELECT Author.Name FROM (SELECT Author_id FROM (SELECT Author_id,COUNT(Book_Author.Book_id) as COUNT FROM Book_Author GROUP BY Author_id) AS t1 WHERE COUNT>1) AS t2,Author WHERE Author.Author_id=t2.Author_id;
 +--------+
 | Name   |
 +--------+
 | Ashwin |
-| Fahma  |
-| Durga  |
-| Melvin |
+| Fahma  | 
 +--------+
 
 --D
