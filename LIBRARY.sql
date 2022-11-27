@@ -47,4 +47,8 @@ ROWS;
  --i
 DELETE FROM BOOK WHERE Book_id=0;
 
-                                                                                   
+--Queries
+INSERT INTO Book_Issue VALUES (1,'2022-08-21',1,10,'2022-08-27'),(2,'2022-02-02',3,20,'2022-02-16'),(3,'2022-10-24',2,17,'2022-10-31'),(4,'2022-09-21',7,10,'2022-09-27');
+INSERT INTO BOOK VALUES(5,'Fundamentals of Wave',5,228,5,'2000-10-21',1,'Wiley '),(7,'God Created the Inte',3,197,4,'2002-08-10 ',3,'Penguin');
+INSERT INTO Book_Author VALUES(7,1),(7,2),(5,2),(5,1),(2,3),(1,4);
+INSERT INTO Book_Return VALUES(1,'2022-08-27',0,0),(2,'2022-02-16',7,10),(3,'2022-10-31',10,100);                                                                                     
