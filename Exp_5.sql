@@ -1,10 +1,10 @@
 --a
-SELECT COUNT(*) FROM Book_Author WHERE Author_Id=1;
+SELECT COUNT(*) FROM Book_Author,Author WHERE Name='Ashwin' AND Author.Author_id=Book_Author.Author_id;
 /*
 +----------+
 | COUNT(*) |
 +----------+
-|        2 |
+|        3 |
 +----------+
 */
 --b
