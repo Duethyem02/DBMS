@@ -76,7 +76,16 @@ SELECT Name FROM Member,Book_Issue,Book_Return WHERE Member.Member_id=Book_Issue
 +--------+
 */
 --H
-
+SELECT Title,SUM(late_fee) FROM BOOK,Book_Issue,Book_Return WHERE BOOK.Book_id=Book_Issue.Book_id AND Book_Issue.Issue_id=Book_Return.Issue_id AND Expected_date_of_return<(CURDATE()) GROUP BY Title;
+/*
++--------------+--------------+
+| Title        |SUM(late_fee) |
++--------------+--------------+
+| C PROGRAM    |        0     |
+| JAVA         |       10     |
+| CHERUKADHA   |      100     |
++---------+-------------------+
+*/
 --I
 SELECT Name FROM Member,Book_Issue WHERE Date_of_join > '2021-01-01' AND Member.Member_id NOT IN(SELECT Member_id  FROM Book_Issue) GROUP BY Name;
 /*
