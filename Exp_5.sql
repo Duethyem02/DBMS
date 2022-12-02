@@ -22,13 +22,14 @@ SELECT Publisher.Name,COUNT(*)  FROM Publisher,BOOK WHERE Publisher.Publisher_id
 */
 --C
 SELECT Author.Name FROM (SELECT Author_id FROM (SELECT Author_id,COUNT(Book_Author.Book_id) as COUNT FROM Book_Author GROUP BY Author_id) AS t1 WHERE COUNT>1) AS t2,Author WHERE Author.Author_id=t2.Author_id;
+/*
 +--------+
 | Name   |
 +--------+
 | Ashwin |
 | Fahma  | 
 +--------+
-
+*/
 --D
 SELECT BOOK.Title FROM BOOK,Book_Issue,Book_Return WHERE BOOK.Book_id=Book_Issue.Book_id AND Book_Issue.Issue_id NOT IN (SELECT Issue_id FROM Book_Return) GROUP BY BOOK.Title;
 /*
